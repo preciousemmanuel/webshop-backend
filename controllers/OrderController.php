@@ -19,17 +19,7 @@ class OrderController  extends \yii\web\Controller
 public function behaviors()
     {
         return [
-        	'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['create',"edit","delete","index"],
-                'rules' => [
-                    [
-                        'actions' => ['create',"edit","delete","index"],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
+
         	'corsFilter'=> [
             'class' => \yii\filters\Cors::class,
             'cors' => [
@@ -38,6 +28,17 @@ public function behaviors()
                 'Access-Control-Request-Headers' => ['*'],
             ],
         ],
+        // 'access' => [
+        //         'class' => AccessControl::className(),
+        //         'only' => ['create',"edit","delete","index"],
+        //         'rules' => [
+        //             [
+        //                 'actions' => ['create',"edit","delete","index"],
+        //                 'allow' => true,
+        //                 'roles' => ['@'],
+        //             ],
+        //         ],
+        //     ],
     ];
 
     }
