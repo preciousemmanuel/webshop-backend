@@ -35,7 +35,7 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    echo Nav::widget([
+    echo Yii::$app->user->isGuest ?"":  Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
            
