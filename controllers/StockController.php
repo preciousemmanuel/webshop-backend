@@ -43,4 +43,12 @@ public function behaviors(){
 
     return $actions;
 }
+
+public function actionSearch($search){
+	$products=Product::find()->where(["like","name",$search."%",false])->all();
+	return $this->asJson(
+            [$products]
+        );
+	
+}
 }
